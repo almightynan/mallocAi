@@ -1,1 +1,27 @@
 /backend
+
+# Compiled binary files
+*.out
+*.exe
+
+# Precompiled Headers
+*.gch
+
+# Debug files
+*.dSYM/
+*.pdb
+
+# Build directories
+/build/
+bin/
+obj/
+
+# Dependency files
+*.d
+
+# Core dumps
+core
+
+# Editor files
+*~
+*.swp

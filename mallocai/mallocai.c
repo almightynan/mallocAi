@@ -3,7 +3,7 @@
  *  author: almightynan [https://almightynan.cc]                   
  *
  * AI-guided memory allocator that communicates with a local AI server.
- * Sends prompts to localhost:3000/gemini over HTTP, receives byte count
+ * Sends prompts to localhost:3000/ai over HTTP, receives byte count
  * in JSON {"text": "<number>"}, and mallocs the resulting size.
  *
  * Written for experimentation, satire, or extreme overengineering.
@@ -15,7 +15,7 @@
  *   void *mallocAi_verbose(const char *prompt, int verbose);
  *
  * Requirements:
- *   - Local server responding to POST /gemini
+ *   - Local server responding to POST /ai
  *   - Response format: JSON with "text" field as byte count
  *
  * Not production safe. Not deterministic. Not rational. Use accordingly.
@@ -117,7 +117,7 @@ void *mallocAi_verbose(const char *prompt, int verbose) {
 #else
     int req_len = snprintf(req, sizeof(req),
 #endif
-        "POST /gemini HTTP/1.1\r\n"
+        "POST /ai HTTP/1.1\r\n"
         "Host: localhost\r\n"
         "Content-Type: application/json\r\n"
         "Content-Length: %s\r\n"
