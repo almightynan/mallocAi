@@ -1,6 +1,2 @@
 /backend
-/mallocai
-libmallocai.a
-mallocai.c
-mallocai.h
-mallocai.o
+/mallocai 
