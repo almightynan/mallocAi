@@ -1,12 +1,13 @@
-#include <stdlib.h>
-#include <stdio.h>
 #include "mallocai/mallocai.h"
+#include <stdio.h>
 
 int main() {
-    void *ptr = mallocAi_verbose("enough for an array of 4 int", 1);
-    if (ptr) {
-        printf("Allocated: %p\n", ptr);
-        free(ptr);
+    void *p = mallocAi("allocate memory for test");
+    if (!p) {
+        printf("Allocation failed\n");
+        return 1;
     }
+    printf("Allocation succeeded\n");
+    free(p);
     return 0;
 }
